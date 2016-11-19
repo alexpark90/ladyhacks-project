@@ -1,0 +1,132 @@
+<md-content flex id="content">
+	<div>
+		<md-tabs md-dynamic-height md-border-bottom>
+
+			<md-tab label="View Problems">
+				<div layout="row" layout-align="center center">	
+					<span flex></span>
+					<div layout="row" layout-align="start center" class="md-padding">
+		            	<span class="bold">Sort By:&nbsp&nbsp</span>
+		            	<md-select ng-model="order">
+				          	<md-option ng-repeat="o in orders" value="{{o.value}}">
+					            {{o.label}}
+					        </md-option>
+				        </md-select>
+		            </div>
+		            <div layout="row" layout-align="start center" class="md-padding">
+		            	Reverse&nbsp<md-checkbox ng-model="reverse"></md-checkbox>
+		            </div>
+					<div layout="row" layout-align="start center" class="md-padding">
+		            	<span class="bold">Search:&nbsp&nbsp</span><input type="text" ng-model="filterText">
+		            </div>
+	          	</div>
+	          	<md-divider></md-divider>
+
+				<div>
+					<md-list>
+						<md-list-item class="md-3-line" ng-repeat="p in problems | orderBy: order : reverse | filter: filterText" ng-show="{{p.CASE_STATUS!=='Closed'}}" ng-click="locateToDetail(p.FID)">
+						    <img alt="p.DETAILS" ng-src="image/{{p.FID}}.png" class="md-avatar" />
+						    <div class="md-list-item-text" layout="column">
+					          <h3>{{ p.DETAILS }}</h3>
+					          <h4>{{ p.CASE_STATUS }}</h4>
+					          <p>{{ p.SUBMIT_DAT }}</p>
+					        </div>
+					        <span>
+					        <div>
+					          <p>{{ p.LOCATION }}</p>
+					        </div>
+					        <md-divider ></md-divider>
+					  	</md-list-item>
+					</md-list>
+				</div>
+			</md-tab>
+
+			<md-tab label="View Completed">
+				<div layout="row" layout-align="center center">	
+					<span flex></span>
+					<div layout="row" layout-align="start center" class="md-padding">
+		            	<span class="bold">Sort By:&nbsp&nbsp</span>
+		            	<md-select ng-model="order">
+				          	<md-option ng-repeat="o in orders" value="{{o.value}}">
+					            {{o.label}}
+					        </md-option>
+				        </md-select>
+		            </div>
+					<div layout="row" layout-align="start center" class="md-padding">
+		            	<span class="bold">Search:&nbsp&nbsp</span><input type="text" ng-model="filterText">
+		            </div>
+	          	</div>
+
+				<div>
+					<md-list>
+						<md-list-item class="md-3-line" ng-repeat="p in problems | orderBy: order : reverse | filter: filterText" ng-show="{{p.CASE_STATUS=='Closed'}}" ng-click="locateToDetail(p.FID)">
+						    <img alt="p.DETAILS" ng-src="image/{{p.FID}}.png" class="md-avatar" />
+						    <div class="md-list-item-text" layout="column">
+					          <h3>{{ p.DETAILS }}</h3>
+					          <h4>{{ p.CASE_STATUS }}</h4>
+					          <p>{{ p.SUBMIT_DAT }}</p>
+					        </div>
+					        <span>
+					        <div>
+					          <p>{{ p.LOCATION }}</p>
+					        </div>
+					        <md-divider ></md-divider>
+					  	</md-list-item>
+					</md-list>
+				</div>
+			</md-tab>
+
+			<md-tab label="Report a Problem">
+	   				<md-content class="md-padding" flex="70">
+						<form name="addProblemForm" ng-submit="submitProblem(problem)">
+							<div layout-gt-sm="row">
+						        <md-input-container class="md-block" flex-gt-sm>
+						          <label>Detail</label>
+						          <input ng-model="problem.DETAILS">
+						        </md-input-container>
+						        <md-input-container class="md-block" flex-gt-sm>
+						          <label>Department</label>
+						          <md-select ng-model="problem.DEPARTMENT">
+						            <md-option ng-repeat="d in departments" value="{{d.value}}">
+						              {{d.value}}
+						            </md-option>
+						          </md-select>
+						        </md-input-container>
+						      </div>
+						      <md-input-container class="md-block">
+						        <label>Address</label>
+						        <input ng-model="problem.LOCATION">
+						      </md-input-container>
+						      <div layout-gt-sm="row">
+						        <md-input-container class="md-block" flex-gt-sm>
+						          <label>Ward</label>
+						          <input ng-model="problem.WARD">
+						        </md-input-container>
+						        <md-input-container class="md-block" flex-gt-sm>
+						          <label>City</label>
+						          <input ng-model="problem.CITY">
+						        </md-input-container>
+						        <md-input-container class="md-block" flex-gt-sm>
+						          <label>Postal Code</label>
+						          <input name="POSTALCODE" ng-model="problem.POSTALCODE" placeholder="ex) L6H2A8"
+						                 required md-maxlength="6">
+						          <div ng-messages="problem.POSTALCODE.$error" role="alert" multiple>
+						            <div ng-message="required" class="my-message">You must supply a postal code.</div>
+						            <div ng-message="pattern" class="my-message">Invalid Postal Code!!</div>
+						            <div ng-message="md-maxlength" class="my-message">Invalid Postal Code!!</div>
+						          </div>
+						        </md-input-container>
+						      </div>
+						      <input type="file" name="fileToUpload" id="fileToUpload" value="Upload File" style="float: center; margin: 0 auto;">
+							<md-button class="md-raised md-primary" type="submit" ng-disabled="addProblemForm.$invalid || isLoading">
+								Add Event
+							</md-button>
+
+						</form>
+	   				</md-content>
+	   			</md-tab>
+
+
+		</md-tabs>
+	</div>
+</md-content>

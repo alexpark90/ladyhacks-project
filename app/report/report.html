@@ -1,0 +1,44 @@
+<md-content layout-padding>
+  <div>
+    <form name="problem">
+      <div layout-gt-sm="row">
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Detail</label>
+          <input ng-model="problem.DETAILS">
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label></label>
+          <md-select ng-model="problem.DEPARTMENT">
+            <md-option ng-repeat="d in departments" value="{{d.value}}">
+              {{d.value}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+      </div>
+      <md-input-container class="md-block">
+        <label>Address</label>
+        <input ng-model="problem.address">
+      </md-input-container>
+      <div layout-gt-sm="row">
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Ward</label>
+          <input ng-model="problem.WARD">
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>City</label>
+          <input ng-model="problem.city">
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Postal Code</label>
+          <input name="postalCode" ng-model="problem.POSTALCODE" placeholder="ex) L6H2A8"
+                 required md-maxlength="6">
+          <div ng-messages="problem.postalCode.$error" role="alert" multiple>
+            <div ng-message="required" class="my-message">You must supply a postal code.</div>
+            <div ng-message="pattern" class="my-message">Invalid Postal Code!!</div>
+            <div ng-message="md-maxlength" class="my-message">Invalid Postal Code!!</div>
+          </div>
+        </md-input-container>
+      </div>
+    </form>
+  </div>
+</md-content>
