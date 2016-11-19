@@ -5,7 +5,7 @@
 	var serviceId = 'serviceFactory';
 
 	angular
-		.module('lokee')
+		.module('ladyhacks')
 		.factory(serviceId, serviceFactory);
 
 	serviceFactory.$inject = ['$resource'];
