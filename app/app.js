@@ -19,8 +19,8 @@
 
 		ladyhacks.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider){
 
-		  // For any unmatched url, redirect to /login
-		  $urlRouterProvider.otherwise("/welcome");
+		  // For any unmatched url, redirect to /main
+		  $urlRouterProvider.otherwise("/main");
 		  
 		  // Set up the states
 		  $stateProvider
@@ -58,15 +58,6 @@
 		      data: {
 		        requireLogin: false,
 		        requirePrev: 0,
-		      }
-		    })
-		    .state('welcome', {
-	    	  url: "/welcome",
-		      templateUrl: "welcome/welcome.html",
-		      controller: 'WelcomeController',
-		      data: {
-		        requireLogin: false,
-		        requirePrev: 0
 		      }
 		    });
 	    }]);
