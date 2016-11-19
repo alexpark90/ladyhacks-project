@@ -4,7 +4,7 @@
 	var controllerId = 'ReportController';
 
 	angular
-		.module('lokee')
+		.module('ladyhacks')
 		.controller(controllerId, ReportController);
 
 		ReportController.$inject = [

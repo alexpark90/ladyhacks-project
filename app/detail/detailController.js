@@ -4,7 +4,7 @@
 	var controllerId = 'DetailController';
  
 	angular
-		.module('lokee')
+		.module('ladyhacks')
         .controller(controllerId, DetailController);
         
         DetailController.$inject = [

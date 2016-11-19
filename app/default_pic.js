@@ -1,5 +1,5 @@
 angular
-    .module('lokee')
+    .module('ladyhacks')
     .directive('img', defaultPicture);
 
 function defaultPicture() {
@@ -7,7 +7,7 @@ function defaultPicture() {
 		restrict: 'E',
 		link: function(scope, element, attrs) {
 			element.bind('error', function() {
-				element.prop('src', './image/logolokee.png');
+				element.prop('src', './image/logoladyhacks.png');
 			});
 		}
 	};

@@ -4,7 +4,7 @@
 	var controllerId = 'WelcomeController';
 
 	angular
-		.module('lokee')
+		.module('ladyhacks')
 		.controller(controllerId, WelcomeController);
 
 		WelcomeController.$inject = [
