@@ -1,0 +1,41 @@
+[
+
+	    {  
+	       "UserID" : "1",
+	       "firstName":"Lizzie",
+	       "lastName":"Urrutia",
+	       "address" : "123 Street",
+	       "province" : "Oakville" },
+
+	    {
+	       "UserID" : "2",
+	       "firstName":"Simran",
+	       "lastName":"Mahajan",
+	       "address" : "123 Street",
+	       "province" : "York"    },
+
+
+	    {
+	      "UserID" : "3",	
+	      "firstName":"Sixin", 
+	      "lastName":"Zhang",
+	      "address" : "123 Street",
+	      "province" : "Brampton"  },
+
+	    {
+	      "UserID" : "4",	
+	      "firstName":"Alex", 
+	      "lastName":"Park",
+	      "address" : "123 Street",
+	      "province" : "Mississauga" },
+
+	    {
+
+	      "UserID" : "5",	
+	      "firstName":"Laura", 
+	      "lastName":"Martinez",
+	       "address" : "123 Street",
+	      "province" : "Oshawa"
+	                               }
+ 
+]
