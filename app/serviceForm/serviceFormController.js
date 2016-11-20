@@ -47,7 +47,7 @@
 			$scope.city = "Mississauga";
 
 
-               
+            
 
 
 			/// functions
@@ -57,5 +57,9 @@
 
 				console.log("it clicked");
 			};
+
+			$scope.cancel = function () {
+	            $mdDialog.cancel();
+	        };
 		}
 })();
