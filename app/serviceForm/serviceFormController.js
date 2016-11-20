@@ -29,7 +29,7 @@
 
 			/// functions
 
-			$scope.submitProblem = function () {
+			$scope.submitService = function () {
 				//$location.path("/detail/" + id);
 
 				console.log("it clicked");

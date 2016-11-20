@@ -5,25 +5,25 @@
         <md-card class="md-margin">
             <md-card-header>
               <md-card-header-text>
-                <span class="md-headline">{{problem.DETAILS}}</span>
-                <span class="md-title">{{problem.DEPARTMENT}}</span>
+                <span class="md-headline">{{service.Task}}</span>
+                <span class="md-title">{{service.Category}}</span>
               </md-card-header-text>
             </md-card-header>
             <div class="md-padding">
-                <img ng-src="image/{{problem.FID}}.png" class="md-card-image" alt="image" style="max-height:400px;">
+                <img ng-src="image/{{service.ID}}.png" class="md-card-image" alt="image" style="max-height:400px;">
             </div>
             <md-card-title>
               <md-card-title-text>
-                <span class="md-title">Location: {{problem.LOCATION}}</span>
-                <span class="md-subhead">Reported Date: {{problem.SUBMIT_DAT}}</span>
+                <span class="md-title">Location: {{service.Location}}</span>
+                <span class="md-subhead">Reported Date: {{service.Date}}</span>
               </md-card-title-text>
             </md-card-title>
             <md-card-content>
               <p layout="row">
-                <strong>Case Id:&nbsp&nbsp</strong><span>{{problem.CASE_ID}}</span>
+                <strong>Type:&nbsp&nbsp</strong><span>{{service.Type}}</span>
               </p>
               <p layout="row">
-                <strong>Status:&nbsp&nbsp</strong><span>{{problem.CASE_STATUS}}</span>
+                <strong>Specific:&nbsp&nbsp</strong><span>{{service.Data}}</span>
               </p>
             </md-card-content>
         </md-card>
