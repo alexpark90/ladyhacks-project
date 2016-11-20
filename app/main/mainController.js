@@ -20,8 +20,7 @@
 
 			serviceFactory.getServices().query(function(data) {
 				
-				$scope.services = data;
-				console.log("debug: " + $scope.services[0].ID);			
+				$scope.services = data;		
 			});
 
 			//$scope.order = 'FID';
@@ -35,20 +34,26 @@
 			];
 
 			$scope.filterBy = 'location';
-
+			
 			$scope.filters = [
-
 				{filter : 'location', value : 'Toronto'},
 				{filter : 'location', value : 'Oakville'},
-				{filter : 'location', value : 'Bramton'},
+				{filter : 'location', value : 'Brampton'},
 				{filter : 'location', value : 'Markham'},
-				{filter : 'location', value : 'Winnipeg'},
-				{filter : 'category', value : 'house'},
-				{filter : 'category', value : 'moving'},
-				{filter : 'category', value : 'babysitting'},
+				{filter : 'location', value : 'York'},
+				{filter : 'location', value : 'Oshawa'},
+				{filter : 'location', value : 'Mississauga'},
+				{filter : 'location', value : 'London'},
+				{filter : 'location', value : 'Guelph'},
+				{filter : 'location', value : 'Barrie'},
+				{filter : 'category', value : 'Household Tasks'},
+				{filter : 'category', value : 'Transportation'},
+				{filter : 'category', value : 'Senior Services'},
+				{filter : 'category', value : 'Children Services'},
+				{filter : 'category', value : 'Media Services'},
 				{filter : 'category', value : 'Tutoring'},
-				{filter : 'category', value : 'cooking'},
-			] 
+			]
+ 
 
 			/// functions
 

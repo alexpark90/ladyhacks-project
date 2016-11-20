@@ -15,7 +15,7 @@
         ];
         
         function DetailController($scope, $stateParams, serviceFactory, $rootScope){
-            
+
             if($stateParams.id==1000) {
                 $scope.service = $rootScope.service;
             }
