@@ -56,6 +56,30 @@
 				$location.path("/detail/" + id);
 			};
 
+			$scope.openDialog = function(event) {
+				$mdDialog.show({
+			    	templateUrl: 'serviceForm/serviceForm.html',
+			    	controller: 'ServiceFormController',
+			    	targetEvent: event,
+			    	clickOutsideToClose: true
+			    	})
+			    	.then(function (){
+			    		// show success message
+			    		$mdToast.show(
+	                        $mdToast.simple()
+	                        .content('Your service is created!')
+	                        .hideDelay(3000)
+	            		);
+			    	}, function() {
+			    		// show cancel message
+			      		$mdToast.show(
+	                        $mdToast.simple()
+	                        .content('Service form is canceld')
+	                        .hideDelay(3000)
+	                	);
+			    	});
+			};
+
 
 			$scope.submitProblem = function (problem) {
 

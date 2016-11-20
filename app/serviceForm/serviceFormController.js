@@ -1,13 +1,13 @@
 (function(){
 	'use strict';
 
-	var controllerId = 'ReportController';
+	var controllerId = 'ServiceFormController';
 
 	angular
 		.module('ladyhacks')
-		.controller(controllerId, ReportController);
+		.controller(controllerId, ServiceFormController);
 
-		ReportController.$inject = [
+		ServiceFormController.$inject = [
 			'$scope',
 			'$mdDialog',
 			'$mdToast',
@@ -15,7 +15,7 @@
 			'serviceFactory'
 		];
 
-		function ReportController($scope, $mdDialog, $mdToast, $location, serviceFactory){
+		function ServiceFormController($scope, $mdDialog, $mdToast, $location, serviceFactory){
 
 			$scope.departments = [
 

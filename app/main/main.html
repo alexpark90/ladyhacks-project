@@ -1,31 +1,26 @@
 <md-content flex id="content">
 	<div>
-		<md-tabs md-dynamic-height md-border-bottom>
-
+		<div layout="row" layout-align="center center">	
+			<span flex></span>
+			<div layout="row" layout-align="start center" class="md-padding">
+            	<span class="md-caption">Filter By:</span>
+            	<md-radio-group ng-model="filterBy" layout="row" class="md-padding">
+				    <md-radio-button value="location" class="md-primary"><span class="md-caption">Location</span></md-radio-button>
+				    <md-radio-button value="category"><span class="md-caption">Category</span></md-radio-button>
+				</md-radio-group>
+		        <md-select ng-model="selectedFilter">
+		          	<md-option ng-repeat="f in filters | filter : filterBy" value="{{f.value}}">
+			            {{f.value}}
+			        </md-option>
+		        </md-select>
+            </div>
+      	</div>
+		<md-tabs md-dynamic-height>
 			<md-tab label="Seeking">
-				<div layout="row" layout-align="center center">	
-					<span flex></span>
-					<div layout="row" layout-align="start center" class="md-padding">
-		            	<span class="bold">Filter By:&nbsp&nbsp</span>
-		            	<md-radio-group ng-model="filterBy" layout="row" class="md-padding">
-						    <md-radio-button value="location" class="md-primary">Location</md-radio-button>
-						    <md-radio-button value="category">Category</md-radio-button>
-    					</md-radio-group>
-				        <md-select ng-model="selectedFilter">
-				          	<md-option ng-repeat="f in filters | filter : filterBy" value="{{f.value}}">
-					            {{f.value}}
-					        </md-option>
-				        </md-select>
-		            </div>
-					<div layout="row" layout-align="start center" class="md-padding">
-		            	<span class="bold">Search:&nbsp&nbsp</span><input type="text" ng-model="filterText">
-		            </div>
-	          	</div>
-	          	<md-divider></md-divider>
-
 				<div>
 					<md-list>
-						<md-list-item class="md-3-line" ng-repeat="p in services | filter: selectedFilter " ng-show="{{p.Type=='Seeking'}}" ng-click="locateToDetail(p.ID)">
+						<md-list-item class="md-3-line" ng-repeat="p in services | filter: selectedFilter " 
+										ng-show="{{p.Type=='Seeking'}}" ng-click="locateToDetail(p.ID)">
 						    <img alt="p.UserID" ng-src="image/{{p.UserID}}.png" class="md-avatar" />
 						    <div class="md-list-item-text" layout="column">
 					          <h3>{{ p.Task }}</h3>
@@ -37,26 +32,12 @@
 					</md-list>
 				</div>
 			</md-tab>
-
 			<md-tab label="Providing">
-				<div layout="row" layout-align="center center">	
-					<span flex></span>
-					<div layout="row" layout-align="start center" class="md-padding">
-		            	<span class="bold">Sort By:&nbsp&nbsp</span>
-		            	<md-select ng-model="order">
-				          	<md-option ng-repeat="o in orders" value="{{o.value}}">
-					            {{o.label}}
-					        </md-option>
-				        </md-select>
-		            </div>
-					<div layout="row" layout-align="start center" class="md-padding">
-		            	<span class="bold">Search:&nbsp&nbsp</span><input type="text" ng-model="filterText">
-		            </div>
-	          	</div>
 
 				<div>
 					<md-list>
-						<md-list-item class="md-3-line" ng-repeat="p in services | filter: selectedFilter" ng-show="{{p.Type=='Providing'}}" ng-click="locateToDetail(p.ID)">
+						<md-list-item class="md-3-line" ng-repeat="p in services | filter: selectedFilter"
+										ng-show="{{p.Type=='Providing'}}" ng-click="locateToDetail(p.ID)">
 						    <img alt="p.DETAILS" ng-src="image/{{p.UserID}}.png" class="md-avatar" />
 						    <div class="md-list-item-text" layout="column">
 					          <h3>{{ p.Task }}</h3>
@@ -71,7 +52,7 @@
 		</md-tabs>
 	</div>
 	<div layout-align="end end">
-		<md-button class="md-fab md-warn" aria-label="Add">
+		<md-button class="md-fab md-fab-bottom-right md-warn" ng-click="openDialog($event)" aria-label="Add">
 	        <md-icon md-svg-src="image/ic_add.svg"></md-icon>
 	    </md-button>
     </div>
