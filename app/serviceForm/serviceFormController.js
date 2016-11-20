@@ -19,10 +19,24 @@
 
 			$scope.departments = [
 
-				{value : 'dep1'},
-				{value : 'dep2'},
-				{value : 'dep3'},
-				{value : 'dep4'}
+				{value : 'Household Tasks'},
+				{value : 'Transportation'},
+				{value : 'Senior Services'},
+				{value : 'Children Services'},
+			    {value : 'Media Services'},
+			    {value : 'Tutoring'}
+
+			];
+
+
+			$scope.tasks = [
+
+				{value : 'House Cleaning'},
+				{value : 'Laundry'},
+				{value : 'Cooking'},
+				{value : 'Moving Help'},
+			    {value : 'Packing Help'}
+			  
 
 			];
 
