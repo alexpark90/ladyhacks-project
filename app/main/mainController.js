@@ -18,10 +18,10 @@
 
 		function MainController($scope, $mdDialog, $mdToast, $location, serviceFactory, $rootScope){
 
-			serviceFactory.getProblems().query(function(data) {
+			serviceFactory.getServices().query(function(data) {
 				
-				$scope.problems = data;
-				console.log("debug: " + $scope.problems[0].FID);			
+				$scope.services = data;
+				console.log("debug: " + $scope.services[0].ID);			
 			});
 
 			//$scope.order = 'FID';
@@ -34,19 +34,21 @@
 
 			];
 
-			$scope.reverse = false;
+			$scope.filterBy = 'location';
 
-			$scope.departments = [
+			$scope.filters = [
 
-				{value : 'Forestry'},
-				{value : 'Sanitary'},
-				{value : 'Parks'},
-				{value : 'Parking'},
-				{value : 'Works'},
-				{value : 'Traffic'},
-				{value : 'Engineering'}
-
-			];
+				{filter : 'location', value : 'Toronto'},
+				{filter : 'location', value : 'Oakville'},
+				{filter : 'location', value : 'Bramton'},
+				{filter : 'location', value : 'Markham'},
+				{filter : 'location', value : 'Winnipeg'},
+				{filter : 'category', value : 'house'},
+				{filter : 'category', value : 'moving'},
+				{filter : 'category', value : 'babysitting'},
+				{filter : 'category', value : 'Tutoring'},
+				{filter : 'category', value : 'cooking'},
+			] 
 
 			/// functions
 
@@ -82,7 +84,7 @@
 				    "DESC": 0
 				}
 
-				$scope.problems.push(problemToAdd);
+				$scope.services.push(problemToAdd);
 				$rootScope.problem = problemToAdd;
 				$mdToast.show(
 					$mdToast.simple()
@@ -91,23 +93,5 @@
 				);
 
 			};
-
-			/*
-
-			$scope.pastEvents = function (events) {
-
-				var past = [];
-
-				for (var i=0; i<events.length; i++) {
-					if (events[i].thisDate<moment() && (events[i].status!=='Available')) {
-						past.push(events[i]);
-					}
-				}
-
-				return past;
-			};
-
-
-			*/
 		}
 })();

@@ -14,7 +14,7 @@
 
 		var fac = {
 
-			getProblems : getProblems
+			getServices : getServices
 		};
 
 		return fac;
@@ -22,9 +22,9 @@
 
 		////// functions 
 
-		function getProblems() {
+		function getServices() {
 			
-			return $resource("json/oakville.json/:id", {});
+			return $resource("json/services.json/:id", {});
 		}
 	}
 
