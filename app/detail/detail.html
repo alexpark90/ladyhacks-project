@@ -1,11 +1,18 @@
 
 <md-content class="md-padding" layout-xs="column" layout="row">   
     <div flex-xs flex-gt-sm="60" layout="column">
+        <div layout="row" layout-align="end center">
+          <md-button class="md-icon-button md-warn" aria-label="all">
+            <i class="fa fa-reply fa-lg" aria-hidden="true"></i>
+          </md-button>
+        </div>
 
         <md-card class="md-margin" layout-align="center center">
             <md-card-title layout-align="center center" layout="column" style="width:100%; background-color: #dcedc8;">  
-              <md-list-item class="md-margin">
+              <md-list-item layout-align="center center">
+                <div>
                   <img ng-src="image/{{service.UserID}}.png" class="md-avatar" alt="image">
+                </div>
               </md-list-item>         
               <md-card-title-text layout-align="center center">
                 <span class="md-headline">{{service.Task}}</span>
@@ -27,6 +34,19 @@
                 <span>{{service.Details}}</span>
               </p>
             </md-card-content>
+            <md-card-actions layout="row" layout-align="start center" class="md-padding">
+                  <md-card-icon-actions>
+                    <md-button class="md-icon-button md-warn" aria-label="Favorite">
+                      <i class="fa fa-heart fa-lg" aria-hidden="true"></i>
+                    </md-button>
+                    <md-button class="md-icon-button md-warn" aria-label="Email">
+                      <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+                    </md-button>
+                    <md-button class="md-icon-button md-warn" aria-label="all">
+                      <i class="fa fa-phone fa-lg" aria-hidden="true"></i>
+                    </md-button>
+                  </md-card-icon-actions>
+            </md-card-actions>
         </md-card>
 
     </div>
