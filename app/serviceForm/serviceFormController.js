@@ -40,6 +40,15 @@
 
 			];
 
+			$scope.type = "seeking";
+
+			$scope.address = "123 Street";
+
+			$scope.city = "Mississauga";
+
+
+               
+
 
 			/// functions
 

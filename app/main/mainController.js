@@ -23,7 +23,7 @@
 				$scope.services = data;		
 			});
 
-			//$scope.order = 'FID';
+			$scope.order = 'Date';
 
 			$scope.orders = [
 				
