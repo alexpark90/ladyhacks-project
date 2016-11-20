@@ -18,7 +18,7 @@
         </md-input-container>
         <md-input-container class="md-block" flex-gt-sm>
           <label>Service Duration</label>
-          <input ng-model="service.DURATION">
+          <input ng-model="service.DURATION" placeholder="(ex. 2 hours)">
         </md-input-container>
         <md-input-container class="md-block" flex-gt-sm>
           <label>Category</label>
@@ -36,27 +36,21 @@
             </md-option>
           </md-select>
         </md-input-container>        
-      <md-radio-group ng-model="filterBy" layout="row" class="md-padding">
-            <md-radio-button value="seeking" class="md-primary"><span class="md-caption">Seeking</span></md-radio-button>
+      <md-radio-group ng-model="type" layout="row" class="md-padding" >
+            <md-radio-button value="seeking" class="md-primary" ><span class="md-caption">Seeking</span></md-radio-button>
             <md-radio-button value="providing"><span class="md-caption">Providing</span></md-radio-button>
         </md-radio-group>
       </div>
       <md-input-container class="md-block">
         <label>Address</label>
-        <input ng-model="service.address">
-      </md-input-container>
+        <input ng-model="address"></md-input-container>
       <div layout-gt-sm="row">
         <md-input-container class="md-block" flex-gt-sm>
-          <label>Location</label>
-          <input ng-model="service.WARD">
-        </md-input-container>
-        <md-input-container class="md-block" flex-gt-sm>
           <label>City</label>
-          <input ng-model="service.city">
-        </md-input-container>
+          <input ng-model="city"></md-input-container>
         <md-input-container class="md-block" flex-gt-sm>
           <label>Postal Code</label>
-          <input name="postalCode" ng-model="service.POSTALCODE" placeholder="ex) L6H2A8"
+          <input name="postalCode" ng-model="service.POSTALCODE" placeholder="(ex. L6H2A8)"
                  required md-maxlength="6">
           <div ng-messages="service.postalCode.$error" role="alert" multiple>
             <div ng-message="required" class="my-message">You must supply a postal code.</div>

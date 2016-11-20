@@ -32,6 +32,16 @@
                 });    
             }
 
+            serviceFactory.getUsers().query(function(data) {
+                for(var i =0; i<data.length; i++) {
+                    if($scope.service.UserID==data[i].UserID) {
+                        $scope.user = data[i];
+                    }
+                }                
+            });
+
+
+
 
             // functions 
 
@@ -46,7 +56,7 @@
             $scope.call = function(event){
                 $mdToast.show(
                             $mdToast.simple()
-                            .content('Calling....')
+                            .content('Calling.... ' + $scope.user.phoneNumber)
                             .hideDelay(3000)
                 );
             };
@@ -58,5 +68,13 @@
                             .hideDelay(3000)
                 );
             };
+
+            $scope.rateFunction = function( rating )
+            {
+                var data = {
+                    rating: 4
+                };
+            };
+
         }
 })();
