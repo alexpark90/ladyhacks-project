@@ -33,15 +33,6 @@
 		        requirePrev: 0 
 		      }
 		    })
-		    .state('report', {
-		      url: "/report",
-		      templateUrl: "report/report.html",
-		      controller: 'ReportController',
-		      data: {
-		        requireLogin: false,
-		        requirePrev: 0 
-		      }
-		    })
 		    .state('detail', {
 		      url: "/detail/:id",
 		      templateUrl: "detail/detail.html",

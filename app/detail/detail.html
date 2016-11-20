@@ -1,31 +1,53 @@
 
 <md-content class="md-padding" layout-xs="column" layout="row">   
     <div flex-xs flex-gt-sm="60" layout="column">
+        <div layout="row" layout-align="end center">
+          <md-button class="md-icon-button md-warn" aria-label="all">
+            <i class="fa fa-reply fa-lg" aria-hidden="true"></i>
+          </md-button>
+        </div>
 
-        <md-card class="md-margin">
-            <md-card-header>
-              <md-card-header-text>
-                <span class="md-headline">{{problem.DETAILS}}</span>
-                <span class="md-title">{{problem.DEPARTMENT}}</span>
-              </md-card-header-text>
-            </md-card-header>
-            <div class="md-padding">
-                <img ng-src="image/{{problem.FID}}.png" class="md-card-image" alt="image" style="max-height:400px;">
-            </div>
-            <md-card-title>
-              <md-card-title-text>
-                <span class="md-title">Location: {{problem.LOCATION}}</span>
-                <span class="md-subhead">Reported Date: {{problem.SUBMIT_DAT}}</span>
+        <md-card class="md-margin" layout-align="center center">
+            <md-card-title layout-align="center center" layout="column" style="width:100%; background-color: #dcedc8;">  
+              <md-list-item layout-align="center center">
+                <div>
+                  <img ng-src="image/{{service.UserID}}.png" class="md-avatar" alt="image">
+                </div>
+              </md-list-item>         
+              <md-card-title-text layout-align="center center">
+                <span class="md-headline">{{service.Task}}</span>
+                <span class="md-title">{{service.Category}}</span>
               </md-card-title-text>
             </md-card-title>
-            <md-card-content>
-              <p layout="row">
-                <strong>Case Id:&nbsp&nbsp</strong><span>{{problem.CASE_ID}}</span>
+            <md-divider ></md-divider>
+            <md-card-content class="md-padding" >
+              <p>
+                <span class="md-subhead"><strong>Location:</strong> {{service.Location}}</span>
+              </p>
+              <p>
+                <span class="md-subhead"><strong>Date:</strong> {{service.Date}}</span>
               </p>
               <p layout="row">
-                <strong>Status:&nbsp&nbsp</strong><span>{{problem.CASE_STATUS}}</span>
+                <strong>Type:&nbsp&nbsp</strong><span>{{service.Type}}</span>
+              </p>
+              <p layout="row" class="md-padding">
+                <span>{{service.Details}}</span>
               </p>
             </md-card-content>
+            <md-card-actions layout="row" layout-align="start center" class="md-padding">
+                  <md-card-icon-actions>
+                    <md-button class="md-icon-button md-warn" aria-label="Favorite">
+                      <i class="fa fa-heart fa-lg" aria-hidden="true"></i>
+                    </md-button>
+                    <md-button class="md-icon-button md-warn" aria-label="Email">
+                      <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+                    </md-button>
+                    <md-button class="md-icon-button md-warn" aria-label="all">
+                      <i class="fa fa-phone fa-lg" aria-hidden="true"></i>
+                    </md-button>
+                  </md-card-icon-actions>
+            </md-card-actions>
         </md-card>
+
     </div>
 </md-content>

@@ -1,41 +1,109 @@
 [
 
 	    {  
-	       "UserID" : "1",
-	       "firstName":"Lizzie",
-	       "lastName":"Urrutia",
-	       "address" : "123 Street",
-	       "province" : "Oakville" },
+	       "UserID": "1",
+	       "userName": "LizzieUrrutia",
+	       "email": "lizzie.urrutia@protonmail.ch",
+	       "address": "123 Street",
+	       "province": "Oakville",
+	       "phoneNumber": "(905)905-9005",
+	       "rating": "5" 
+	   	},
 
 	    {
-	       "UserID" : "2",
-	       "firstName":"Simran",
-	       "lastName":"Mahajan",
-	       "address" : "123 Street",
-	       "province" : "York"    },
-
-
-	    {
-	      "UserID" : "3",	
-	      "firstName":"Sixin", 
-	      "lastName":"Zhang",
-	      "address" : "123 Street",
-	      "province" : "Brampton"  },
+	       "UserID": "2",
+	       "userName": "Simran Mahajan",
+	       "email": "simran@gmail.com",
+	       "address": "123 Street",
+	       "province": "York",
+	       "phoneNumber": "(289)795-9999",
+	       "rating": "5"    
+	   	},
 
 	    {
-	      "UserID" : "4",	
-	      "firstName":"Alex", 
-	      "lastName":"Park",
-	      "address" : "123 Street",
-	      "province" : "Mississauga" },
+	      "UserID": "3",	
+	      "userName": "Sixin Zhang", 
+	      "email": "wondergirl@hotmail.com",
+	      "address": "123 Street",
+	      "province": "Brampton",
+	      "phoneNumber": "(647)328-1122",
+	      "rating": "5"  
+	  	},
+
+	    {
+	      "UserID": "4",	
+	      "userName": "Alex Park", 
+	      "email": "tech_gods@outlook.com",
+	      "address": "123 Street",
+	      "province": "Mississauga",
+	      "phoneNumber": "(416)000-4332",
+	      "rating": "5" 
+	  	},
 
 	    {
 
-	      "UserID" : "5",	
-	      "firstName":"Laura", 
-	      "lastName":"Martinez",
-	       "address" : "123 Street",
-	      "province" : "Oshawa"
-	                               }
- 
+	      "UserID": "5",	
+	      "userName": "Laura Martinez", 
+	      "email": "laura1999@sheridancollege.ca",
+	      "address": "123 Street",
+	      "province": "Oshawa",
+	      "phoneNumber": "(907)436-0087",
+	      "rating": "5" 
+	  	},
+
+	    {
+
+	      "UserID": "6",	
+	      "userName": "Michael Reitner", 
+	      "email": "bigmike@uft.ca",
+	      "address": "123 Street",
+	      "province": "Markham",
+	      "phoneNumber": "(647)443-6674",
+	      "rating": "3" 
+	  	},
+
+	    {
+
+	      "UserID": "7",	
+	      "userName": "Jerome Bilage", 
+	      "email": "cottage.lover@gmail.com",
+	      "address": "123 Street",
+	      "province": "Toronto",
+	      "phoneNumber": "(416)534-1098",
+	      "rating": "2" 
+	  	},
+
+	    {
+
+	      "UserID": "8",	
+	      "userName": "Steven Michaels", 
+	      "email": "steven_Michaels@icloud.com",
+	      "address": "123 Street",
+	      "province": "London",
+	      "phoneNumber": "(519)564-4441",
+	      "rating": "4" 
+	  	},                              
+
+		{
+
+	      "UserID": "9",	
+	      "userName": "Richard Ban", 
+	      "email": "rick435544@gmx.com",
+	      "address": "123 Street",
+	      "province": "Guelph",
+	      "phoneNumber": "(905)112-3232",
+	      "rating": "1" 
+	  	},
+
+		{
+
+	      "UserID": "10",	
+	      "userName": "David Ferguson", 
+	      "email": "fergusonfamily21@yahoo.ca",
+	      "address": "123 Street",
+	      "province": "Barrie",
+	      "phoneNumber": "(289)400-2840",
+	      "rating": "4" 
+	  	}
+
 ]
