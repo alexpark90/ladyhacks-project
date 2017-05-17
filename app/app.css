@@ -28,3 +28,7 @@
   content: "";
   padding: 0;
 }
+
+.rating .filled {
+color: #21568b;
+}
