@@ -15,7 +15,8 @@
 		var fac = {
 
 			getServices : getServices,
-			getUsers : getUsers
+			getUsers : getUsers,
+			addService : addService
 		};
 
 		return fac;
@@ -31,6 +32,11 @@
 		function getUsers() {
 			
 			return $resource("json/users.json/:id", {});
+		};
+
+		function addService(serviceToAdd) {
+			
+			return;
 		};
 	}
 

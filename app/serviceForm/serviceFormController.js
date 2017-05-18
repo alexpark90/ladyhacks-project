@@ -17,6 +17,8 @@
 
 		function ServiceFormController($scope, $mdDialog, $mdToast, $location, serviceFactory){
 
+			var initID = 20;
+
 			$scope.departments = [
 
 				{value : 'Household Tasks'},
@@ -31,31 +33,73 @@
 
 			$scope.tasks = [
 
-				{value : 'House Cleaning'},
-				{value : 'Laundry'},
-				{value : 'Cooking'},
-				{value : 'Moving Help'},
-			    {value : 'Packing Help'}
+				{department: 'Household Tasks', value : 'House Cleaning'},
+				{department: 'Household Tasks', value : 'Laundry'},
+				{department: 'Household Tasks', value : 'Cooking'},
+				{department: 'Transportation', value : 'Airport Pickup'},
+				{department: 'Transportation', value : 'Moving'},
+				{department: 'Senior Services', value : 'Teaching Tech'},
+			    {department: 'Children Services', value : 'Playing in the park'},
+			    {department: 'Children Services', value : 'Checking homework'},
+			    {department: 'Media Services', value : 'Filming'},
+			    {department: 'Tutoring', value : 'Math Help'},
+			    {department: 'Tutoring', value : 'English Specking'}
 			  
 
 			];
 
-			$scope.type = "seeking";
 
-			$scope.address = "123 Street";
+			$scope.service = {
 
-			$scope.city = "Mississauga";
+				ID: initID++,
+				UserID: "9",
+				Location: "Toronto",
+				Address: "123 Street",
+				Task: "",
+				Date: new Date().toISOString().slice(0,10),
+				Details: "",
+				Department: "",
+				Duration: "",
+				Postalcode: "",
+				Type: "seeking"
 
-
-               
+			};
 
 
 			/// functions
 
-			$scope.submitService = function () {
-				//$location.path("/detail/" + id);
+			$scope.submit = function () {
 
-				console.log("it clicked");
+				var serviceToAdd = $scope.service;
+
+				console.log(serviceToAdd);
+
+				serviceFactory.addService(serviceToAdd);
+
+                    
+					$scope.service = {
+
+						ID: initID++,
+						UserID: "9",
+						Location: "Toronto",
+						Address: "123 Street",
+						Task: "",
+						Date: new Date().toISOString().slice(0,10),
+						Details: "",
+						Department: "",
+						Duration: "",
+						Postalcode: "",
+						Type: "seeking"
+
+					};
+                    
+                    $scope.serviceForm.$setPristine();
+				
+				$mdDialog.hide();
+			};
+
+			$scope.cancel = function () {
+				$mdDialog.cancel();
 			};
 		}
 })();

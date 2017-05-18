@@ -20,8 +20,10 @@
 
 			serviceFactory.getServices().query(function(data) {
 				
-				$scope.services = data;		
+				$scope.services = data;
+
 			});
+
 
 			$scope.order = 'Date';
 
@@ -83,44 +85,6 @@
 	                        .hideDelay(3000)
 	                	);
 			    	});
-			};
-
-
-			$scope.submitProblem = function (problem) {
-
-				var problemToAdd = {
-					"FID": 1000,
-				    "CASE_ID": 123123,
-				    "POSTALCODE": problem.POSTALCODE,
-				    "WARD": problem.WARD,
-				    "SUBMIT_DAT": "2016-05-15",
-				    "DETAILS": problem.DETAILS,
-				    "LOCATION": problem.LOCATION,
-				    "CASE_STATUS": "Assigned",
-				    "X_COORDINATE": 0,
-				    "Y_COORDINATE": 0,
-				    "DEPARTMENT": "",
-				    "L_HOUSE_NO": 2350,
-				    "L_STREET_N": "",
-				    "FACILITY_N": 0,
-				    "INTER_ST_1": 0,
-				    "INTER_ST_2": 0,
-				    "SUBMIT_DATE": 0,
-				    "SOLVE_DATE": 0,
-				    "STATUS": 0,
-				    "PHOTO": 0,
-				    "TYPE": 0,
-				    "DESC": 0
-				}
-
-				$scope.services.push(problemToAdd);
-				$rootScope.problem = problemToAdd;
-				$mdToast.show(
-					$mdToast.simple()
-						.content('The problem has been added successfully!')
-						.hideDelay(3000)
-				);
-
 			};
 		}
 })();
